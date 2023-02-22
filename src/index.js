@@ -21,5 +21,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor eschando en http://localhost:${PORT}`);
   sequelize
-  .sync({force:true})
+  .sync({force:false})
 });
