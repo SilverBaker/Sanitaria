@@ -6,8 +6,9 @@ class Corte extends Model{}
 
 Corte.init({
     id_corte:{
-        type:DataTypes.STRING,
+        type:DataTypes.INTEGER,
         primaryKey:true,
+        autoIncrement:true,
 
     },
     fecha:{

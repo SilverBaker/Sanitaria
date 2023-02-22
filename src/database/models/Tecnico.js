@@ -6,8 +6,9 @@ class Tecnico extends Model{}
 
 Tecnico.init({
     id_tecnico:{
-        type:DataTypes.STRING,
+        type:DataTypes.INTEGER,
         primaryKey:true,
+        autoIncrement:true,
 
     },
     nombre:{

@@ -6,8 +6,9 @@ class Casette extends Model{}
 
 Casette.init({
     id_muestra:{
-        type:DataTypes.STRING,
+        type:DataTypes.INTEGER,
         primaryKey:true,
+        autoIncrement:true,
     },
     fecha:{
         type:DataTypes.STRING,

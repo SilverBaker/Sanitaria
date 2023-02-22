@@ -1,7 +1,7 @@
 const Sequelize=require("sequelize")
 
 const sequelize= new Sequelize(
-    "sanitaria",//nombre bd
+    "sanitariabd",//nombre bd
     "root",//nombre user
     "",//contraseña usuario
     {
