@@ -18,6 +18,15 @@ Muestra.init({
     observaciones:{
         type:DataTypes.STRING,
     },
+    tincion:{
+        type:DataTypes.STRING,
+        allowNull:false
+
+    },
+    organo:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
     qr_muestra:{
         type:DataTypes.STRING,
         allowNull:false
