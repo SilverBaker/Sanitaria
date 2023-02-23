@@ -2,14 +2,22 @@ const Tecnico=require("../database/models/Tecnico")
 const Services=require("../services/TecnicoService.js")
 
 
-const consultarTecnicos = async (req, res) => {
+const getTecnicos = async (req, res) => {
     const tecnicos = await Tecnico.findAll();
     res.json(tecnicos);
 }
 
-const consultarUnTecnico=async (req, res) => {
+const getUnTecnicoId=async (req, res) => {
     const tecnicos = await Tecnico.findByPk(req.params.id);
-    res.json(tecnicos);
+    tecnicos!=null?res.json(tecnicos):res.json({message:"No se ha encontrado al usuario perteneciente a ese id"})
 }
 
-module.exports={consultarTecnicos,consultarUnTecnico}
+
+const getUnTecnicoMail=async (req,res)=>{
+    const tecnicos=await Services.getUnTecnicoMail(req.params.mail)
+    tecnicos!=null?res.json(tecnicos):res.json({message:"No se ha encontrado al usuario propietario de ese email"})
+
+    
+}
+
+module.exports={getTecnicos,getUnTecnicoId,getUnTecnicoMail}
