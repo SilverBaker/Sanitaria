@@ -4,9 +4,10 @@ const Controller = require("../controllers/TecnicoController")
 
 tecnicoRouter.get("/", Controller.getTecnicos);
 
-tecnicoRouter.get("/id/:id", Controller.getUnTecnicoId);
-
 tecnicoRouter.get("/mail/:mail", Controller.getUnTecnicoMail)
+
+tecnicoRouter.post("/register", Controller.registro)
+
 
 tecnicoRouter.post("/", async(req, res) => {
     const tecnicos = await Tecnico.create(req.body);

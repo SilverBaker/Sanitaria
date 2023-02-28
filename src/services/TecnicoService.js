@@ -1,30 +1,29 @@
 const Tecnico = require("../database/models/Tecnico");
-const { QueryTypes } = require('sequelize');
 
-const getUnTecnicoMail=async(email)=>{
-    const [tecnicos,metadata]=await Tecnico.sequelize.query(
-        "select * from tecnicos where email=?",
-            {
-              replacements: [email],
-              type: QueryTypes.SELECT
-            }
-        )
-    return tecnicos
-    
-    
-    // .then(res.json(tecnicos))
-    // .catch(res.json({response:"No se ha podido encontrar el usuario vinculado a ese correo"}));
-    ;
+const getUnTecnicoMail = async (email) => {
+    const tecnico = await Tecnico.findOne({ where: { email: `${email}` } })
+    return tecnico
+        ;
 }
 
-module.exports={getUnTecnicoMail}
+const getAllTecnicos = async () => {
+    const tecnicos = await Tecnico.findAll();
+    return tecnicos
+}
 
+const register = async (user) => {
+    const response = await Tecnico.create(
+        {
+            "nombre": user.nombre,
+            "apellidos": user.apellidos,
+            "email": user.email,
+            "password": user.password,
+            "curso": user.curso,
+            "centro": user.centro
+        }
+    )
 
+    return response
+}
 
-// await sequelize.query(
-//     'SELECT * FROM projects WHERE status = ?',
-//     {
-//       replacements: ['active'],
-//       type: QueryTypes.SELECT
-//     }
-//   );
+module.exports = { getUnTecnicoMail, getAllTecnicos, register }
