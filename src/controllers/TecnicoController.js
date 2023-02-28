@@ -12,9 +12,9 @@ const getUnTecnicoMail=async (req,res)=>{
     tecnicos!=null?res.json(tecnicos):res.json({message:"No se ha encontrado al usuario propietario de ese email"})
 }
 
-const registro=(req,res)=>{
-    Services.register(req.body)
-    res.json(req.body)
+const registro=async(req,res)=>{
+    const tecnico=await Services.register(req.body)
+    res.json(tecnico)
 }
 
 module.exports={getTecnicos,getUnTecnicoMail,registro}
