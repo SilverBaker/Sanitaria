@@ -2,10 +2,10 @@ const sequelize=require("../db")
 
 const {Model, DataTypes} = require ("sequelize")
 
-class Corte extends Model{}
+class Imagen extends Model{}
 
-Corte.init({
-    id_corte:{
+Imagen.init({
+    id_imagen:{
         type:DataTypes.INTEGER,
         primaryKey:true,
         autoIncrement:true,
@@ -18,15 +18,15 @@ Corte.init({
     observaciones:{
         type:DataTypes.STRING,
     },
-    qr_corte:{
+    qr_imagen:{
         type:DataTypes.STRING,
         allowNull:false
     },
     
 },{
     sequelize,
-    modelName:"corte",
+    modelName:"imagen",
     timestamps:false,
 })
 
-module.exports=Corte
+module.exports=Imagen
