@@ -20,4 +20,9 @@ const buscarPorOrgano = async(organo)=>{
     return casettes;
 }
 
-module.exports = { getUnCasette, getAllCasettes, crearCasetteService,buscarPorOrgano }
+const buscarPorFecha = async(fecha)=>{
+    const casettes = await Casette.findAll({ where: { fecha: `${fecha}` } });
+    return casettes;
+}
+
+module.exports = { getUnCasette, getAllCasettes, crearCasetteService,buscarPorOrgano,buscarPorFecha }
