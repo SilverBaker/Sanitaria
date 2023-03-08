@@ -15,4 +15,9 @@ const crearCasetteService = async(post)=>{
     return casette
 }
 
-module.exports = { getUnCasette, getAllCasettes, crearCasetteService }
+const buscarPorOrgano = async(organo)=>{
+    const casettes = await Casette.findAll({ where: { organo: `${organo}` } });
+    return casettes;
+}
+
+module.exports = { getUnCasette, getAllCasettes, crearCasetteService,buscarPorOrgano }

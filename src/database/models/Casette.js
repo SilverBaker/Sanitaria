@@ -28,6 +28,10 @@ Casette.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    organo: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
 }, {
     sequelize,
     modelName: "casette",

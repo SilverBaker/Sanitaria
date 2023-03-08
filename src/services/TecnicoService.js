@@ -74,7 +74,7 @@ const register = async (user) => {
             }
         )
     } catch (error) {
-        response = { message: "Usuario no registrable" }
+        response = { message: "Error al registrar" }
     }
 
     return response

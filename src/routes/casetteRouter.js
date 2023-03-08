@@ -5,7 +5,9 @@ const Controller=require("../controllers/CasetteController")
 
 casetteRouter.get("/", Controller.getCasettes);
 
-casetteRouter.post("/",middlewares.checkToken, Controller.crearCasette);
+casetteRouter.post("/", middlewares.checkToken, Controller.crearCasette);
+
+casetteRouter.get("/organo/:organo" , middlewares.checkToken, Controller.getPorOrgano)
 
 
 module.exports = casetteRouter;

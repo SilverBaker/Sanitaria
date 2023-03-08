@@ -8,7 +8,7 @@ tecnicoRouter.get("/mail/:mail", Controller.getUnTecnicoMail)
 
 tecnicoRouter.post("/register", Controller.registro)
 
-tecnicoRouter.get("/login", Controller.login)
+tecnicoRouter.post("/login", Controller.login)
 
 
 module.exports = tecnicoRouter;
