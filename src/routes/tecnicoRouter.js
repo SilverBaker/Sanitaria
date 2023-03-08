@@ -8,10 +8,7 @@ tecnicoRouter.get("/mail/:mail", Controller.getUnTecnicoMail)
 
 tecnicoRouter.post("/register", Controller.registro)
 
+tecnicoRouter.get("/login", Controller.login)
 
-tecnicoRouter.post("/", async(req, res) => {
-    const tecnicos = await Tecnico.create(req.body);
-    res.json(tecnicos);
-});
 
 module.exports = tecnicoRouter;

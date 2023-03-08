@@ -11,4 +11,9 @@ const getUnCasette = async(req, res) => {
     casette != null ? res.json(casette) : res.json({ message: "No se ha encontrado ningun registro" });
 }
 
-module.exports = { getCasettes, getUnCasette }
+const crearCasette=async(req, res) => {
+    const casettes = await Services.crearCasetteService(req.body);
+    res.json(casettes);
+}
+
+module.exports = { getCasettes, getUnCasette,crearCasette }

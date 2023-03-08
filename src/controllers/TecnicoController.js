@@ -17,4 +17,9 @@ const registro=async(req,res)=>{
     res.json(tecnico)
 }
 
-module.exports={getTecnicos,getUnTecnicoMail,registro}
+const login=async(req,res)=>{
+    const user=await Services.login(req.body)
+    res.json(user)
+  }
+
+module.exports={getTecnicos,getUnTecnicoMail,registro,login}

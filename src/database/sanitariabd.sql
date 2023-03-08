@@ -172,7 +172,6 @@ COMMIT;
 
 
 
-insert into tecnicos VALUES(id_tecnico,"Miguel Ángel","Haro Plaza","tabulete@gmail.com","password","1","La rioja");
 
 
 

@@ -10,4 +10,9 @@ const getAllCasettes = async() => {
     return casettes;
 }
 
-module.exports = { getUnCasette, getAllCasettes }
+const crearCasetteService = async(post)=>{
+    const casette = await Casette.create(post)
+    return casette
+}
+
+module.exports = { getUnCasette, getAllCasettes, crearCasetteService }
