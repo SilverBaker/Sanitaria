@@ -14,9 +14,7 @@ const sequelize=require("./database/db")
 // Conversión a json datos que nos envían para post, put, patch...
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({
-    origin: 'http://127.0.0.1:5001'
-}));
+app.use(cors());
 
 // conexión con mysql
 app.use("/v1", apiroutes);
