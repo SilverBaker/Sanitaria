@@ -1,5 +1,4 @@
 const casetteRouter = require("express").Router();
-const Casette = require("../database/models/Casette");
 const middlewares=require("../middlewares/middlewares")
 const Controller=require("../controllers/CasetteController")
 

@@ -23,7 +23,7 @@ const getPorOrgano = async(req, res) => {
 }
 
 const getPorFecha = async(req, res) => {
-    const casette = await Services.buscarPorFecha(req.params.organo);
+    const casette = await Services.buscarPorFecha(req.params.fecha);
 
     casette != null ? res.json(casette) : res.json({ message: "No se ha encontrado ningun registro" });
 }

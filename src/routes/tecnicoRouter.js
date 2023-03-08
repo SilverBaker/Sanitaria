@@ -1,5 +1,4 @@
 const tecnicoRouter = require("express").Router();
-const Tecnico = require("../database/models/Tecnico");
 const Controller = require("../controllers/TecnicoController")
 
 tecnicoRouter.get("/", Controller.getTecnicos);
