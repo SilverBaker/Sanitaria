@@ -6,7 +6,7 @@ const getUnCasette = async(casetteId) => {
 }
 
 const getAllCasettes = async() => {
-    const casettes = await Casette.findAll();
+    const casettes = await Casette.findAll({  order: [['fecha', 'ASC']]});
     return casettes;
 }
 
@@ -25,4 +25,9 @@ const buscarPorFecha = async(fecha)=>{
     return casettes;
 }
 
-module.exports = { getUnCasette, getAllCasettes, crearCasetteService,buscarPorOrgano,buscarPorFecha }
+const getOnlyOrganos=async()=>{
+    const organos=await Casette.findAll({attributes: ["organo"],group: "organo",});
+    return organos
+}
+
+module.exports = { getUnCasette, getAllCasettes, crearCasetteService,buscarPorOrgano,buscarPorFecha,getOnlyOrganos }

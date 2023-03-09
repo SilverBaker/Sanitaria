@@ -22,6 +22,11 @@ const getPorOrgano = async(req, res) => {
     casette != null ? res.json(casette) : res.json({ message: "No se ha encontrado ningun registro" });
 }
 
+const onlyOrganos = async(req, res) => {
+    const organos = await Services.getOnlyOrganos();
+    res.json(organos)
+}
+
 const getPorFecha = async(req, res) => {
     const casette = await Services.buscarPorFecha(req.params.fecha);
 
@@ -29,4 +34,4 @@ const getPorFecha = async(req, res) => {
 }
 
 
-module.exports = { getCasettes, getUnCasette,crearCasette, getPorOrgano,getPorFecha }
+module.exports = { getCasettes, getUnCasette,crearCasette, getPorOrgano,getPorFecha,onlyOrganos }
