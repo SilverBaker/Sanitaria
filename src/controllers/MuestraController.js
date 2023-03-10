@@ -10,4 +10,9 @@ const getUnMuestra = async(req, res) => {
     muestra != null ? res.json(muestra) : res.json({ message: "No se ha encontrado ningun registro" });
 }
 
-module.exports = { getMuestras, getUnMuestra }
+const createMuestra=async(req, res) => {
+    const muestras = await Services.createMuestra(req.body);
+    res.json(muestras);
+}
+
+module.exports = { getMuestras, getUnMuestra,createMuestra }
