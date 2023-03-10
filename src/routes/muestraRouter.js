@@ -1,14 +1,11 @@
 const muestraRouter = require("express").Router();
 const Muestra = require("../database/models/Muestra");
+const Controller=require("../controllers/MuestraController")
 
-muestraRouter.get("/", async(req, res) => {
-    const muestras = await Muestra.findAll();
-    res.json(muestras);
-});
+muestraRouter.get("/", Controller.getMuestras);
 
-muestraRouter.post("/", async(req, res) => {
-    const muestras = await Muestra.create(req.body);
-    res.json(muestras);
-});
+muestraRouter.get("/:id", Controller.getUnMuestra);
+
+muestraRouter.post("/", Controller.createMuestra);
 
 module.exports = muestraRouter;

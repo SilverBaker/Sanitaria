@@ -10,4 +10,9 @@ const getAllMuestras = async() => {
     return muestras;
 }
 
-module.exports = { getUnMuestra, getAllMuestras }
+const createMuestra=async(body)=>{
+    const muestra=Muestra.create(body)
+    return muestra
+}
+
+module.exports = { getUnMuestra, getAllMuestras,createMuestra }

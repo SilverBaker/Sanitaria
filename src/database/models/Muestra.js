@@ -5,7 +5,7 @@ const {Model, DataTypes} = require ("sequelize")
 class Muestra extends Model{}
 
 Muestra.init({
-    id_corte:{
+    id_muestra:{
         type:DataTypes.INTEGER,
         primaryKey:true,
         autoIncrement:true,
@@ -22,10 +22,6 @@ Muestra.init({
         type:DataTypes.STRING,
         allowNull:false
 
-    },
-    organo:{
-        type:DataTypes.STRING,
-        allowNull:false
     },
     qr_muestra:{
         type:DataTypes.STRING,
