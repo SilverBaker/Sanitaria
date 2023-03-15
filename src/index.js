@@ -1,7 +1,9 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
-const cors=require("cors")
+const cors = require("cors");
+
+const mailer = require("./email/sendEmail");
 
 require("./database/associations")
 
@@ -9,7 +11,7 @@ require("./database/associations")
 const apiroutes = require("./routes/apiRouter");
 
 // importacion de la conexion/instancia de la base de datos
-const sequelize=require("./database/db")
+const sequelize = require("./database/db")
 
 // Conversión a json datos que nos envían para post, put, patch...
 app.use(bodyParser.json());
@@ -22,7 +24,7 @@ app.use("/v1", apiroutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor eschando en http://localhost:${PORT}`);
-  sequelize
-  .sync({force:false})
+    console.log(`Servidor eschando en http://localhost:${PORT}`);
+    sequelize
+        .sync({ force: false })
 });
