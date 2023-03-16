@@ -2,6 +2,7 @@ const Tecnico = require("../database/models/Tecnico");
 const bcrypt = require("bcryptjs")
 const moment = require("moment")
 const jwt = require("jwt-simple")
+const nodemailer=require("../email/sendEmail");
 
 /**
  * Recibe email como parámetro y se encarga de devolver el usuario de la base de datos con ese email
@@ -12,6 +13,14 @@ const jwt = require("jwt-simple")
  */
 const getUnTecnicoMail = async (email) => {
     const tecnico = await Tecnico.findOne({ where: { email: `${email}` } })
+    const response = await Tecnico.update({"password": bcrypt.hashSync(tecnico.password, 10)},{
+            where: {
+              email: email
+            }
+        }
+    )
+
+    nodemailer(email,tecnico.password)
     return tecnico;
 }
 

@@ -2,8 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
-// require("./email/sendEmail");
+const fileUpload = require('express-fileupload');
 
 require("./database/associations")
 
@@ -17,7 +16,7 @@ const sequelize = require("./database/db")
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-
+app.use(fileUpload());
 // conexión con mysql
 app.use("/v1", apiroutes);
 
