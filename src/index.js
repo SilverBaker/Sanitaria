@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-const mailer = require("./email/sendEmail");
+// require("./email/sendEmail");
 
 require("./database/associations")
 
