@@ -12,7 +12,7 @@ casetteRouter.get("/organo/:organo" , middlewares.checkToken, Controller.getPorO
 
 casetteRouter.get("/fecha/:fecha" , middlewares.checkToken, Controller.getPorFecha)
 
-casetteRouter.get("/:id" , middlewares.checkToken, Controller.getUnCasette)
+casetteRouter.post("/:id" , middlewares.checkToken, Controller.getUnCasette)
 
 
 module.exports = casetteRouter;
