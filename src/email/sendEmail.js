@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const enviarCorreo = (email,password) => {
     //Aspecto para enviar el email
     const message = {
-        from: "sanitariacsm@gmail.com",
+        from: "email",
         to: email,
         subject: "Contraseña de recuperacion",
         text: password,
@@ -16,8 +16,8 @@ const enviarCorreo = (email,password) => {
         port: 587,
         secure: false, // upgrade later with STARTTLS
         auth: {
-            user: "sanitariacsm@gmail.com",
-            pass: "xxcrpoxpnucmugpr",
+            user: "email",
+            pass: "password",
         },
     });
 
